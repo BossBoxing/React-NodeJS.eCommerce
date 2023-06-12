@@ -1,113 +1,60 @@
-import Image from 'next/image'
+const people = [
+  {
+    id: 0,
+    name: 'BossBoxing',
+    sizeDick: 56,
+    imgUrl: 'https://scontent.fkkc3-1.fna.fbcdn.net/v/t1.6435-9/116720623_2665781890352750_8092927111783884284_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEAcaDjB60iM7i9VGnQJyJ0jCkSLD6KN9yMKRIsPoo33B8Igt_YsT1HKz7SWeaAacd85KqhxRzu4TJSivZvdb30&_nc_ohc=gIXW3dB5ePYAX_t14wf&_nc_ht=scontent.fkkc3-1.fna&oh=00_AfBpoP5tb2irpWpdgs5rAb91TZq2kgvJURuMILGxbpEO-g&oe=64AE9535',
+  },
+  {
+    id: 1,
+    name: 'BillyForce',
+    sizeDick: 49,
+    imgUrl: 'https://scontent.fkkc3-1.fna.fbcdn.net/v/t39.30808-6/317303143_2769249743211953_9183093381111071413_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHDFc5w2fe4EtVDKauysah9EKIksZdHNYYQoiSxl0c1hnSMuj2L2T5dbZN97lbksnK6MhTGn7s_65G3WBric73S&_nc_ohc=MM_g13j8zRcAX8-JZDc&_nc_ht=scontent.fkkc3-1.fna&oh=00_AfB35jvb7Ev28Jwgz7NhcvtNwdzGes__Fw6vr7I9OcYaHw&oe=648CDED4',
+  },
+  {
+    id: 2,
+    name: 'Impossible',
+    sizeDick: 49,
+    imgUrl: 'https://scontent.fkkc3-1.fna.fbcdn.net/v/t39.30808-6/346086465_1297863007821667_9033168054361049081_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHHtluNZ0Vdz5UxhnJuPDGimRSk1FoA1H2ZFKTUWgDUfeASLaPdyH-PxnRYq4VMrMPGwel7zGrtB-5w60fuFVew&_nc_ohc=aY14VD6xCPMAX9j3xCx&_nc_ht=scontent.fkkc3-1.fna&oh=00_AfDTFCzOnzDhrR9P6BUFiC2MyjzNXzOl5FzxOZ557aaFEw&oe=648B087C',
+  },
+  {
+    id: 4,
+    name: 'ETCx',
+    sizeDick: 49,
+    imgUrl: 'https://scontent.fkkc3-1.fna.fbcdn.net/v/t1.6435-9/119177474_2045443588921451_5996644114844328512_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGPTIWEfgFfjSk1uCIg3WWerlha637IX1yuWFrrfshfXIcqDjJwRcTWOQMIWcg5m7tY_DQNVYx0ytmHwsps6mLP&_nc_ohc=IplzYRh4ljAAX8Q9cZU&_nc_ht=scontent.fkkc3-1.fna&oh=00_AfD8HRdnP1x7uk1Oi2O2Enrbwq6GoOBX8dRkRiR9Gsagaw&oe=64AE7E8A',
+  },
+  {
+    id: 5,
+    name: 'DionPalm',
+    sizeDick: 49,
+    imgUrl: 'https://scontent.fkkc3-1.fna.fbcdn.net/v/t39.30808-6/274264952_3578921642334243_583362622062588529_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_eui2=AeGyFKmrWkaq6fHDk3fDkwD0P3yi6Z2AiZw_fKLpnYCJnITBUyOGUSwFALjxz56f9-W8wsz9J1Q_3aU4oJhDFeQ9&_nc_ohc=Ko3499f5_oMAX-NKKhO&_nc_ht=scontent.fkkc3-1.fna&oh=00_AfCxi2Yo4RCAc5Ll8QWCewx8cHFpA9h8-0k6_bxu8cRZ9w&oe=648BE5C0',
+  },
+];
 
-export default function Home() {
+const bigPeople = people.filter(
+  people => people.sizeDick > 49
+)
+
+const listPeoples = bigPeople.map(a =>
+  <div className="card rounded-none">
+    <li>
+      <img
+        src={a.imgUrl}
+        alt={a.name}
+        width={50}
+        height={50}
+        className="rounded"
+      />
+      Name: {a.name} <br />
+      Dick Size: {a.sizeDick}
+    </li>
+  </div>
+)
+
+export default function PeopleList() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    <div>
+      <ul>{listPeoples}</ul>
+    </div>
+  );
 }
