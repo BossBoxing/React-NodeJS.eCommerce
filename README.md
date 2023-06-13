@@ -1,6 +1,6 @@
 <h1> <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3af/512.gif" alt="🎯" width="28" height="28"> Workshop : E-Commerce</h1>
 
-Workshop,Learning with React, Node.js, MongoDB to make a E-Commerce Web Application
+Workshop,Learning with React + Tailwind CSS, Node.js, MongoDB to make a E-Commerce Web Application
 
 <br>
 
