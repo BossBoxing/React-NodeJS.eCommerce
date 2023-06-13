@@ -1,4 +1,20 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
+=======
+
+<h1>Workshop 1 : E-Commerce</h1>
+
+For Up Skills and Learning with React, Node.js, MongoDB
+<h2>My Teams</h2>
+
+- BossBoxing
+- BillyForce
+
+
+<h1>React</h1>
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+>>>>>>> 097be481515a8416295683e2e5ee52f395ab240d
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
