@@ -1,3 +1,15 @@
+
+<h1>Workshop 1 : E-Commerce</h1>
+
+For Up Skills and Learning with React, Node.js, MongoDB
+<h2>My Teams</h2>
+
+- BossBoxing
+- BillyForce
+
+
+<h1>React</h1>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
