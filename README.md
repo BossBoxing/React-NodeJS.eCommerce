@@ -7,21 +7,21 @@ Workshop,Learning with React + Tailwind CSS, Node.js, MongoDB to make an E-Comme
 <h1>Setting a Project</h1>
 
 - Install Node Module
-1. Clone This Project
-2. Open cmd
-3. cd client Folder
-4. text "npm i" and Enter
-5. cd server Folder
-6. text "npm i" and Enter (like 4.)
+    1. Clone This Project
+    2. Open cmd
+    3. cd client Folder
+    4. text "npm i" and Enter
+    5. cd server Folder
+    6. text "npm i" and Enter (like 4.)
 
-- Starting Project
-1. Open cmd
-2. cd server Folder
-3. text "npm start" (For Start Node.js Back-End)
-4. Open cmd (No.2)
-5. cd client Folder
-6. text "npm start" (For Start React Front-End)
-7. Enjoy. (Go to Browser -> Go to https://localhost:3000)
+- Starting Project 
+    1. Open cmd
+    2. cd server Folder
+    3. text "npm start" (For Start Node.js Back-End)
+    4. Open cmd (No.2)
+    5. cd client Folder
+    6. text "npm start" (For Start React Front-End)
+    7. Enjoy. (Go to Browser -> Go to https://localhost:3000)
 
 <br>
 
