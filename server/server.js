@@ -9,6 +9,7 @@ const Product = require('./models/productModel')
 // MongoDB Setting.
 const mongoose = require('mongoose');
 var url = 'mongodb+srv://admin:1234@cluster0.pnjkkaj.mongodb.net/eCommerce?retryWrites=true&w=majority'
+mongoose.set("strictQuery", false)
 mongoose.connect(url)
   .then(() => {
     console.log('MongoDB Connection Successfully.')
