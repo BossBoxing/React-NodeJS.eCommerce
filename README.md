@@ -19,10 +19,10 @@ This Project Using Node v20.1.0
 - Starting Project 
 1. Open cmd
 2. cd server Folder
-3. text "npm dev" (For Start Node.js Back-End)
+3. text "npm run dev" (For Start Node.js Back-End)
 4. Open cmd (No.2)
 5. cd client Folder
-6. text "npm dev" (For Start React Front-End)
+6. text "npm run dev" (For Start React Front-End)
 7. Enjoy. (Go to Browser -> Go to https://localhost:3000)
 
 <br>
