@@ -3,13 +3,13 @@ import './App.css';
 
 // Components
 import Navbar from './Components/Navbar.js';
-import Showcase from './Components/Showcase.js';
+import Product from './Components/Products';
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Showcase/>
+      <Product/>
     </div>
   );
 }

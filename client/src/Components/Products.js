@@ -22,7 +22,7 @@ const data = [
     },
 ];
 
-const ShowcaseDOM = data.map(a => {
+const ProductDOM = data.map(a => {
     return (
         <>
             <div className="card">
@@ -38,11 +38,11 @@ const ShowcaseDOM = data.map(a => {
     );
 })
 
-export default function Showcase() {
+export default function Product() {
     return (
         <>
             <div className="grid grid-cols-3 gap-2">
-                {ShowcaseDOM}
+                {ProductDOM}
             </div >
         </>
     );
