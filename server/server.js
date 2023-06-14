@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 
+app.use(express.json());
+
+const port = 9000
+
 // mock data
 const products = [
   {
@@ -54,6 +58,6 @@ app.get('/products/cate/:category', (req, res) => {
   res.json(result);
 });
 
-app.listen(9000, () => {
-  console.log('Application is running on port 9000');
+app.listen(port, () => {
+  console.log('Application is running on port ' + port);
 });
