@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const data = [
     {
@@ -39,10 +41,18 @@ const ProductDOM = data.map(a => {
 })
 
 export default function Product() {
+    const [text, setText] = useState("");
+
+    axios.get('http://localhost:9000/products', { crossdomain: true })
+        .then(respones => {
+            setText(respones.data.name);
+        })
+
     return (
         <>
             <div className="grid grid-cols-3 gap-2">
                 {ProductDOM}
+                {text}
             </div >
         </>
     );
