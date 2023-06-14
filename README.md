@@ -8,7 +8,7 @@ Workshop,Learning with React + Tailwind CSS, Node.js, MongoDB to make an E-Comme
 
 <h1><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4a1/512.gif" alt="💡" width="28" height="28"> Setting a Project</h1>
 
-This Project using Node v12.1.0
+This Project Using Node v20.1.0
 
 - Install Node Module
 1. Clone This Project
@@ -21,10 +21,10 @@ This Project using Node v12.1.0
 - Starting Project 
 1. Open cmd
 2. cd server Folder
-3. text "npm start" (For Start Node.js Back-End)
+3. text "npm run dev" (For Start Node.js Back-End)
 4. Open cmd (No.2)
 5. cd client Folder
-6. text "npm start" (For Start React Front-End)
+6. text "npm run dev" (For Start React Front-End)
 7. Enjoy. (Go to Browser -> Go to https://localhost:3000)
 
 <br>
