@@ -6,6 +6,8 @@ Workshop,Learning with React + Tailwind CSS, Node.js, MongoDB to make an E-Comme
 
 <h1><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4a1/512.gif" alt="💡" width="28" height="28"> Setting a Project</h1>
 
+This Project Using Node v20.1.0
+
 - Install Node Module
 1. Clone This Project
 2. Open cmd
