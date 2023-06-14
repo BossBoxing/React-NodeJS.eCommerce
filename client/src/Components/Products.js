@@ -22,7 +22,7 @@ export default function Product() {
             <div className="grid grid-cols-3 gap-2">
                 {Products.map(p => (
                     <div className="card">
-                        <img src={p.imgUrl} width={200}/>
+                        <img src={p.image} width={200}/>
                         <p> Name: {p.name} </p>
                         <p> Price: {p.price}</p>
                     </div>
