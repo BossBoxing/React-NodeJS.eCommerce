@@ -48,6 +48,12 @@ app.delete('/products/:id', (req, res) => {
   res.json({ id });
 });
 
+app.get('/products/cate/:category', (req, res) => {
+  const { category } = req.params;
+  const result = products.filter((product) => product.category === category);
+  res.json(result);
+});
+
 app.listen(9000, () => {
   console.log('Application is running on port 9000');
 });
