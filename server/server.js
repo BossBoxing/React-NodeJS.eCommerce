@@ -17,19 +17,22 @@ const products = [
     id: '1001',
     name: 'Nike Air 1',
     category: 'Shoes',
-    price: 9900
+    price: 9900,
+    imgUrl: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e777c881-5b62-4250-92a6-362967f54cca/%E0%B8%A3%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%97%E0%B9%89%E0%B8%B2%E0%B8%9C%E0%B8%B9%E0%B9%89-air-force-1-07-NMmm1B.png'
   },
   {
     id: '1002',
     name: 'Gucci Belt',
     category: 'Accessories',
-    price: 15000
+    price: 15000,
+    imgUrl: 'https://image.makewebeasy.net/makeweb/m_1920x0/Yb8McSsRb/March_Week1_23/GUCCI_BELT_3_CM_80_BLACK_CALF_GHW_5438.jpg'
   },
   {
     id: '1003',
     name: 'Adidas NMD R1',
     category: 'Shoes',
-    price: 5000
+    price: 5000,
+    imgUrl: 'https://d2cva83hdk3bwc.cloudfront.net/adidas-nmd-r1-pk--og---black-red-blue--1.jpg'
   }
 ];
 
