@@ -23,12 +23,12 @@ export default function Product() {
                     Products
                 </h1>
             </div>
-            <div className="grid grid-cols-4 gap-4 p-6">
+            <div className="grid grid-cols-1 gap-4 p-6 lg:grid-cols-4 sm:grid-cols-2">
                 {Products.map(p => (
                     <div className="card">
-                        <img src={p.image} width={200}/>
-                        <p> Name: {p.name} </p>
-                        <p> Price: {p.price}</p>
+                        <img src={p.image} className="w-auto h-5/6"/>
+                        <p className="text-left font-bold ml-1 mt-2"> Name: {p.name} </p>
+                        <p className="text-left font-bold ml-1"> Price: {p.price.toLocaleString()} Baht</p>
                     </div>
                 ))}
             </div >
