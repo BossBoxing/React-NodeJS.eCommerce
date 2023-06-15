@@ -1,7 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import Select from "react-select";
 import axios from 'axios';
 
 const AddProduct = () => {
+
+    const options = [
+        { value: "blues", label: "Blues" },
+        { value: "rock", label: "Rock" },
+        { value: "jazz", label: "Jazz" },
+        { value: "orchestra", label: "Orchestra" },
+      ];
 
     const [product, setProduct] = useState({
         name: '',
@@ -43,14 +51,15 @@ const AddProduct = () => {
                         <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
                             Product Category Name :
                         </label>
-                        <input
+                        <Select options={options} onChange={handleInput}/>
+                        {/* <input
                             type="text"
                             name="category"
                             id="category"
                             onChange={handleInput}
                             autoComplete="category"
                             className="rounded"
-                            placeholder="category" />
+                            placeholder="category" /> */}
                         <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
                             Product Price :
                         </label>

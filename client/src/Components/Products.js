@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 export default function Product() {
 
@@ -12,7 +11,7 @@ export default function Product() {
         .then(
             result => {
                 setProducts(result)
-                console.log(result)
+                // console.log(result)
             }
         )
     })
@@ -24,7 +23,7 @@ export default function Product() {
                     Products
                 </h1>
             </div>
-            <div className="grid grid-cols-3 gap-2 p-6">
+            <div className="grid grid-cols-4 gap-4 p-6">
                 {Products.map(p => (
                     <div className="card">
                         <img src={p.image} width={200}/>

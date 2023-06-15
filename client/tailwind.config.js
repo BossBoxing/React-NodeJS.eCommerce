@@ -14,5 +14,7 @@ module.exports = {
       '6': '48px',
     }
   },
-  plugins: [],
+  plugins: [
+
+  ],
 }
