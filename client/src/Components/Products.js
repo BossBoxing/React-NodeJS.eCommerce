@@ -19,7 +19,12 @@ export default function Product() {
 
     return (
         <>
-            <div className="grid grid-cols-3 gap-2">
+            <div>
+                <h1 className="p-5">
+                    Products
+                </h1>
+            </div>
+            <div className="grid grid-cols-3 gap-2 p-6">
                 {Products.map(p => (
                     <div className="card">
                         <img src={p.image} width={200}/>
