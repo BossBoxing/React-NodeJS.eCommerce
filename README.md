@@ -8,7 +8,7 @@ Workshop,Learning with React + Tailwind CSS, Node.js, MongoDB to make an E-Comme
 <br>
 
 <h1>
-<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4a1/512.gif" alt="💡" width="28" height="28"> Setting a Project</h1>
+<img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f4a1/512.gif" alt="💡" width="28" height="28"> Setting up a Project</h1>
 
 This Project Using Node v20.1.0
 
