@@ -7,7 +7,6 @@ export default function Navbar() {
 
                     <Link to="/" className="ml-3 rounded p-1 bg-slate-400">E-Commerce</Link>
                     <Link to="/product" className="ml-5 rounded bg-slate-950 hover:bg-slate-700 p-1 text-white">Product</Link>
-                    <Link to="/product/add" className="ml-5 rounded bg-slate-950 hover:bg-slate-700 p-1 text-white">Add Product</Link>
             </div>
             <Outlet />
         </>

@@ -36,13 +36,23 @@ app.get('/products', async(req, res) => {
   }
 })
 
+app.get('/products/:id', async(req, res) => {
+  try {
+      const {id} = req.params
+      console.log({id})
+      const products = await Product.find({_id : id});
+      res.status(200).json(products);
+  } catch (error) {
+      res.status(500).json({message: error.message})
+  }
+})
+
 
 app.post('/products', async(req, res) => {
   try{
     const product = await Product.create(req.body)
     console.log(product)
     res.status(200).json(product)
-
   }catch (error){
     console.log(error)
     res.status(500).json({message: error.message})
@@ -60,6 +70,22 @@ app.delete('/products/delete/:id', async(req, res) =>{
     res.status(200).json(product)
   }
   catch (error){
+    res.status(500).json({message: error.message})
+  }
+})
+
+app.put('/products/update', async(req,res) =>{
+  try{
+    console.log(req.body)
+    const id = req.body._id;
+    const product = await Product.findByIdAndUpdate(id, req.body);
+    if(!product)
+    {
+      return res.status(404).json({message:'cannot find any product with ID ${id}'})
+    }
+    res.status(200).json(product)
+  }
+  catch(error){
     res.status(500).json({message: error.message})
   }
 })

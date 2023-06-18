@@ -1,5 +1,6 @@
 import axios, { Axios } from 'axios';
 import React, { useState, useEffect } from 'react';
+import { Outlet, Link } from "react-router-dom";
 
 export default function Product() {
 
@@ -30,12 +31,24 @@ export default function Product() {
         }
     }
 
+    const EditProduct = async (product) => {
+        try{
+            
+        }
+        catch(err)
+        {
+            console.error(err)
+        }
+    }
+
     return (
         <>
             <div>
                 <h1 className="p-5">
                     Products
                 </h1>
+
+                <Link to="/product/add" className="ml-5 rounded bg-green-700 hover:bg-green-500 p-1 text-white">Add Product</Link>
             </div>
             <div className="grid grid-cols-1 gap-4 p-6 lg:grid-cols-5 sm:grid-cols-2">
                 {Products.map(p => (
@@ -44,6 +57,7 @@ export default function Product() {
                         <p className="text-left font-bold ml-1 mt-2"> Name: {p.name} </p>
                         <p className="text-left font-bold ml-1"> Price: {p.price.toLocaleString()} Baht</p>
                         <button onClick={() => DeleteProduct(p._id)} className=" rounded text-white bg-red-600 hover:bg-red-400 ml-1 w-5">X</button>
+                        <Link to={`/product/add/${p._id}`} style={{marginRight: "10px"}}><button className=" rounded text-white bg-yellow-400 hover:bg-yellow-200 ml-1 w-5">Edit</button></Link>
                     </div>
                 ))}
             </div >

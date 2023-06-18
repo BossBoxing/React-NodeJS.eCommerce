@@ -1,16 +1,11 @@
-import React, { useState } from 'react';
-import Select from "react-select";
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate , useParams } from 'react-router-dom';
+
+var methodAction = false;
 
 const AddProduct = () => {
-
-    const options = [
-        { value: "blues", label: "Blues" },
-        { value: "rock", label: "Rock" },
-        { value: "jazz", label: "Jazz" },
-        { value: "orchestra", label: "Orchestra" },
-      ];
-
+    const navigate = useNavigate();
     const [product, setProduct] = useState({
         name: '',
         category: '',
@@ -18,16 +13,64 @@ const AddProduct = () => {
         image: ''
     })
 
+    const { id } = useParams();
+
+    useEffect(() => {
+        if (id) {
+            console.log('Edit Product!')
+            getProduct();
+            methodAction = true;
+        }
+        else {
+            console.log('Add Product!')
+            methodAction = false;
+        }
+    }, [])
+
+    const getProduct = () => {
+        try {
+            console.log(id)
+            const res = fetch(`http://localhost:9000/products/${id}`)
+                .then((response) => {
+                    console.log(response.json().then(
+                        (product) => {
+                            setProduct(product[0])
+                        }
+                    ))
+                })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
     const handleInput = (event) => {
-        setProduct({...product, [event.target.name]: event.target.value})
+        setProduct({ ...product, [event.target.name]: event.target.value })
     }
 
     const handleSubmit = (event) => {
-        event.preventDefault()
-        console.log(product)
-        axios.post('http://localhost:9000/products', product)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
+        console.log(methodAction)
+        if (methodAction === false) {
+            event.preventDefault()
+            console.log(product)
+            console.log('POST METHOD')
+            axios.post('http://localhost:9000/products', product)
+                .then(res => console.log(res))
+                .catch(err => console.log(err))
+            navigate('/product')
+            alert('Add Successfully')
+        }
+        else{
+            event.preventDefault()
+            console.log(product)
+            console.log('PUT METHOD')
+            axios.put('http://localhost:9000/products/update', product)
+                .then(res => console.log(res))
+                .catch(err => console.log(err))
+            navigate('/product')
+            alert('Edit Successfully')
+        }
+
     }
 
     return (
@@ -47,19 +90,20 @@ const AddProduct = () => {
                             onChange={handleInput}
                             autoComplete="name"
                             className="rounded"
+                            value={product.name}
                             placeholder="name" />
                         <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
                             Product Category Name :
                         </label>
-                        <Select options={options} onChange={handleInput}/>
-                        {/* <input
+                        <input
                             type="text"
                             name="category"
                             id="category"
                             onChange={handleInput}
                             autoComplete="category"
                             className="rounded"
-                            placeholder="category" /> */}
+                            value={product.category}
+                            placeholder="category" />
                         <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
                             Product Price :
                         </label>
@@ -70,6 +114,7 @@ const AddProduct = () => {
                             onChange={handleInput}
                             className="rounded"
                             autoComplete="price"
+                            value={product.price}
                             placeholder="price" />
                         <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
                             Product Image Url :
@@ -81,11 +126,12 @@ const AddProduct = () => {
                             onChange={handleInput}
                             className="rounded"
                             autoComplete="image"
+                            value={product.image}
                             placeholder="image-url" />
                         <br />
                         <br />
                         <button type="submit" className="bg-white rounded hover:bg-slate-800">
-                            Add Product
+                            {methodAction === false ? 'Add Product' : 'Edit Product'}
                         </button>
                     </form>
                 </div>
